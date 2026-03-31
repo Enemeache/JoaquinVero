@@ -73,9 +73,9 @@ export default function Contact() {
                 <label className="block text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-2">¿Qué plan te interesa?</label>
                 <select className="w-full bg-[#1a1a1a] border border-white/10 text-gray-300 text-sm px-4 py-3 rounded-xl outline-none focus:border-[#C6FF00]/50 transition-colors">
                   <option value="">Seleccioná un plan</option>
-                  <option>Plan Esencial</option>
-                  <option>Plan Premium</option>
-                  <option>Plan 1 a 1 Presencial</option>
+                  <option>Plan Online</option>
+                  <option>Plan Presencial</option>
+                  <option>Plan 1 a 1</option>
                   <option>No sé, quiero asesoramiento</option>
                 </select>
               </div>
