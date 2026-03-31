@@ -1,83 +1,80 @@
 const sponsors = [
   {
     name: "Invictus",
-    tagline: "Suplementos deportivos de alta performance",
-    description:
-      "Invictus es la marca de suplementación que respalda mi rendimiento y el de mis clientes. Calidad comprobada, fórmulas efectivas.",
+    category: "Indumentaria Deportiva",
+    tagline: "Gym & StreetWear de alto rendimiento",
+    description: "Invictus es la marca de indumentaria que respalda mi rendimiento y el de mis clientes. Diseñada para atletas que buscan estilo y comodidad dentro y fuera del gym.",
     url: "https://invictus.ar/",
-    badge: "Suplementación",
+    instagramUrl: "https://www.instagram.com/invictusok/",
+    instagramHandle: "@invictusok",
   },
   {
     name: "Vital Ambition",
-    tagline: "Nutrición y bienestar para atletas",
-    description:
-      "Vital Ambition acompaña el camino de quienes buscan su mejor versión con productos de nutrición y bienestar de primer nivel.",
+    category: "Suplementación",
+    tagline: "Suplementación importada y nacional al mejor precio",
+    description: "Vital Ambition acompaña el camino de quienes buscan su mejor versión. Para personas ambiciosas que buscan rendir al máximo. EL QUE DUDA, PIERDE.",
     url: "https://www.vitalambition.com.ar/",
-    badge: "Nutrición",
+    instagramUrl: "https://www.instagram.com/vitalambition.suplementos/",
+    instagramHandle: "@vitalambition.suplementos",
   },
 ];
 
 export default function Sponsors() {
   return (
-    <section className="bg-[#0a0a0a] py-20 md:py-28">
+    <section className="bg-[#0a0a0a] py-24 md:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <span className="text-[#f97316] text-xs font-semibold tracking-widest uppercase mb-3 block">
+        <div className="text-center mb-16 md:mb-20">
+          <span className="text-[#C6FF00] text-xs font-bold tracking-widest uppercase mb-3 block">
             Sponsors
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tight">
+          <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl text-white uppercase tracking-wide leading-none">
             MARCAS QUE CONFÍAN EN MÍ
           </h2>
-          <p className="text-gray-400 mt-4 text-base sm:text-lg max-w-xl mx-auto">
-            Trabajo con las mejores marcas del mercado porque mis clientes merecen lo mejor.
+          <p className="text-gray-400 mt-5 text-base sm:text-lg font-light max-w-xl mx-auto leading-relaxed">
+            Trabajo con las mejores marcas del mercado. Usá mi código y potenciá tus resultados.
           </p>
         </div>
 
-        {/* Sponsor Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
           {sponsors.map((sponsor) => (
-            <a
+            <div
               key={sponsor.name}
-              href={sponsor.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex flex-col gap-5 bg-[#111111] border border-white/10 p-8 transition-all duration-300 hover:border-[#f97316]/60 hover:bg-[#111111]/80 orange-glow"
+              className="group bg-[#111111] border border-white/10 rounded-2xl overflow-hidden hover:border-[#C6FF00]/40 transition-all duration-300"
             >
-              {/* Corner accent */}
-              <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[#f97316]/40 group-hover:border-[#f97316]/80 transition-colors duration-300" />
-              <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[#f97316]/40 group-hover:border-[#f97316]/80 transition-colors duration-300" />
-
-              {/* Badge */}
-              <span className="self-start text-[#f97316] text-xs font-semibold tracking-widest uppercase border border-[#f97316]/30 px-3 py-1">
-                {sponsor.badge}
-              </span>
-
-              {/* Name */}
-              <h3 className="text-3xl sm:text-4xl font-black text-white tracking-tight group-hover:text-[#f97316] transition-colors duration-200">
-                {sponsor.name}
-              </h3>
-
-              {/* Tagline */}
-              <p className="text-[#f97316] text-sm font-semibold">{sponsor.tagline}</p>
-
-              {/* Description */}
-              <p className="text-gray-400 text-sm leading-relaxed">{sponsor.description}</p>
-
-              {/* Link indicator */}
-              <div className="flex items-center gap-2 text-[#f97316] text-xs font-semibold tracking-wider uppercase mt-auto pt-2 border-t border-white/10">
-                Visitar sitio
-                <svg
-                  className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2.5}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
+              {/* Image band placeholder */}
+              <div className="h-44 relative overflow-hidden flex items-center justify-center"
+                style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)" }}>
+                <span className="font-bebas text-5xl text-white/20 tracking-widest select-none group-hover:text-white/30 transition-colors duration-300">
+                  {sponsor.name.toUpperCase()}
+                </span>
+                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#111111] to-transparent" />
               </div>
-            </a>
+
+              <div className="p-8 flex flex-col gap-5">
+                <div>
+                  <p className="text-[#C6FF00] text-xs font-bold tracking-widest uppercase mb-2">{sponsor.category}</p>
+                  <h3 className="font-bebas text-4xl text-white tracking-wide group-hover:text-[#C6FF00] transition-colors duration-200">
+                    {sponsor.name}
+                  </h3>
+                  <p className="text-gray-300 text-sm font-medium mt-1">{sponsor.tagline}</p>
+                </div>
+
+                <p className="text-gray-500 text-sm font-light leading-relaxed">{sponsor.description}</p>
+
+                {/* Discount banner */}
+                <div className="flex items-center justify-between gap-4 bg-[#0a0a0a] border border-white/10 rounded-xl p-5 flex-wrap">
+                  <div>
+                    <p className="text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-1">Tu código de descuento</p>
+                    <p className="font-bebas text-2xl text-[#C6FF00] tracking-widest">JOACOVERON</p>
+                    <p className="text-xs text-gray-600 mt-0.5">Descuento especial en toda la tienda</p>
+                  </div>
+                  <a href={sponsor.url} target="_blank" rel="noopener noreferrer"
+                    className="text-xs font-bold bg-[#C6FF00] text-black px-4 py-2.5 rounded-lg hover:bg-[#A8E000] transition-colors whitespace-nowrap">
+                    Ver tienda →
+                  </a>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>

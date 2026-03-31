@@ -3,7 +3,8 @@
 :root {
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --accent: #f97316;
+  --accent: #C6FF00;
+  --accent2: #A8E000;
   --secondary-bg: #111111;
   --card-bg: #1a1a1a;
 }
@@ -21,7 +22,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-family: 'DM Sans', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
@@ -35,12 +36,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #f97316;
+  background: #C6FF00;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ea6c0a;
+  background: #A8E000;
 }
 
 /* Hero gradient animation */
@@ -61,10 +62,10 @@ body {
 
 @keyframes pulseGlow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 0 20px rgba(198, 255, 0, 0.4);
   }
   50% {
-    box-shadow: 0 0 40px rgba(249, 115, 22, 0.8), 0 0 60px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 0 40px rgba(198, 255, 0, 0.8), 0 0 60px rgba(198, 255, 0, 0.4);
   }
 }
 
@@ -154,18 +155,23 @@ body {
   animation: heroBg 8s ease-in-out infinite;
 }
 
-/* Orange glow effect */
+/* Font utilities */
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Lime glow effect */
 .orange-glow {
-  box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+  box-shadow: 0 0 30px rgba(198, 255, 0, 0.15);
 }
 
 .orange-glow:hover {
-  box-shadow: 0 0 50px rgba(249, 115, 22, 0.5);
+  box-shadow: 0 0 50px rgba(198, 255, 0, 0.3);
 }
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #f97316, #fb923c);
+  background: linear-gradient(135deg, #C6FF00, #A8E000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

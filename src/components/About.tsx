@@ -23,31 +23,31 @@ const features = [
 
 export default function About() {
   return (
-    <section id="sobre-mi" className="bg-[#111111] py-20 md:py-28 scroll-mt-20">
+    <section id="sobre-mi" className="bg-[#111111] py-24 md:py-32 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image / Placeholder */}
           <div className="flex justify-center md:justify-start">
             <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
               {/* Background decoration */}
-              <div className="absolute -inset-4 border border-[#f97316]/20 -rotate-3" />
-              <div className="absolute -inset-2 border border-[#f97316]/10 rotate-1" />
+              <div className="absolute -inset-4 border border-[#C6FF00]/20 -rotate-3" />
+              <div className="absolute -inset-2 border border-[#C6FF00]/10 rotate-1" />
               {/* Main image placeholder */}
               <div
                 className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden"
                 style={{
-                  background: "linear-gradient(135deg, #1a1a1a 0%, #222222 50%, rgba(249,115,22,0.1) 100%)",
+                  background: "linear-gradient(135deg, #1a1a1a 0%, #222222 50%, rgba(198,255,0,0.1) 100%)",
                 }}
               >
                 {/* Initials */}
-                <span className="text-8xl md:text-9xl font-black text-[#f97316] select-none leading-none">
+                <span className="font-bebas text-8xl md:text-9xl text-[#C6FF00] select-none leading-none tracking-wide">
                   JV
                 </span>
                 <span className="text-gray-400 text-sm font-medium mt-2 tracking-widest uppercase">
                   Joaquín Verón
                 </span>
                 {/* Decorative line */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#f97316]" />
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#C6FF00]" />
               </div>
             </div>
           </div>
@@ -55,14 +55,14 @@ export default function About() {
           {/* Text content */}
           <div className="flex flex-col gap-6">
             {/* Label */}
-            <span className="text-[#f97316] text-xs font-semibold tracking-widest uppercase">
+            <span className="text-[#C6FF00] text-xs font-bold tracking-widest uppercase">
               Sobre Mí
             </span>
 
             {/* Heading */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight uppercase tracking-tight">
+            <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl text-white leading-none uppercase tracking-wide">
               Tu Entrenador,<br />
-              <span className="text-[#f97316]">Tu Aliado</span>
+              <span className="text-[#C6FF00]">Tu Aliado</span>
             </h2>
 
             {/* Bio */}
@@ -81,7 +81,7 @@ export default function About() {
               {features.map((feat) => (
                 <div
                   key={feat.title}
-                  className="flex items-start gap-3 bg-[#1a1a1a] border border-white/5 p-4 hover:border-[#f97316]/30 transition-colors duration-200 group"
+                  className="flex items-start gap-3 bg-[#1a1a1a] border border-white/5 p-4 hover:border-[#C6FF00]/30 transition-colors duration-200 group rounded-xl"
                 >
                   <span className="text-2xl mt-0.5 flex-shrink-0 group-hover:scale-110 transition-transform duration-200">
                     {feat.icon}
