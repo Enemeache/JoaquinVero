@@ -28,25 +28,17 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image / Placeholder */}
           <div className="flex justify-center md:justify-start">
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96">
+            <div className="relative w-72 sm:w-80 md:w-96" style={{ aspectRatio: "3/4" }}>
               {/* Background decoration */}
               <div className="absolute -inset-4 border border-[#C6FF00]/20 -rotate-3" />
               <div className="absolute -inset-2 border border-[#C6FF00]/10 rotate-1" />
-              {/* Main image placeholder */}
-              <div
-                className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden"
-                style={{
-                  background: "linear-gradient(135deg, #1a1a1a 0%, #222222 50%, rgba(198,255,0,0.1) 100%)",
-                }}
-              >
-                {/* Initials */}
-                <span className="font-bebas text-8xl md:text-9xl text-[#C6FF00] select-none leading-none tracking-wide">
-                  JV
-                </span>
-                <span className="text-gray-400 text-sm font-medium mt-2 tracking-widest uppercase">
-                  Joaquín Verón
-                </span>
-                {/* Decorative line */}
+              {/* Real photo */}
+              <div className="relative w-full h-full overflow-hidden">
+                <img
+                  src="/joaco-about.jpg.jpg"
+                  alt="Joaquín Verón - Personal Trainer"
+                  className="w-full h-full object-cover object-top"
+                />
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#C6FF00]" />
               </div>
             </div>

@@ -7,6 +7,8 @@ const sponsors = [
     url: "https://invictus.ar/",
     instagramUrl: "https://www.instagram.com/invictusok/",
     instagramHandle: "@invictusok",
+    logo: "/logo-invictus.jpg.jpg",
+    logoBg: "#0a0a0a",
   },
   {
     name: "Vital Ambition",
@@ -16,6 +18,8 @@ const sponsors = [
     url: "https://www.vitalambition.com.ar/",
     instagramUrl: "https://www.instagram.com/vitalambition.suplementos/",
     instagramHandle: "@vitalambition.suplementos",
+    logo: "/logo-vital-ambition.jpg.jpg",
+    logoBg: "#b3f000",
   },
 ];
 
@@ -41,13 +45,17 @@ export default function Sponsors() {
               key={sponsor.name}
               className="group bg-[#111111] border border-white/10 rounded-2xl overflow-hidden hover:border-[#C6FF00]/40 transition-all duration-300"
             >
-              {/* Image band placeholder */}
-              <div className="h-44 relative overflow-hidden flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)" }}>
-                <span className="font-bebas text-5xl text-white/20 tracking-widest select-none group-hover:text-white/30 transition-colors duration-300">
-                  {sponsor.name.toUpperCase()}
-                </span>
-                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#111111] to-transparent" />
+              {/* Logo band */}
+              <div
+                className="h-44 relative overflow-hidden flex items-center justify-center"
+                style={{ background: sponsor.logoBg }}
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={`${sponsor.name} logo`}
+                  className="h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-[#111111] to-transparent" />
               </div>
 
               <div className="p-8 flex flex-col gap-5">
