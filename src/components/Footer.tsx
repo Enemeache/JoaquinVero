@@ -16,9 +16,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-4">
             <Link href="#inicio" className="flex items-center gap-3 group w-fit">
-              <div className="w-10 h-10 bg-[#C6FF00] flex items-center justify-center font-bold text-black text-lg transition-transform duration-200 group-hover:scale-105">
-                JV
-              </div>
+              <img
+                src="/logo-jv-transparent.png"
+                alt="JV Logo"
+                className="w-10 h-10 object-contain transition-transform duration-200 group-hover:scale-105"
+              />
               <span className="font-bebas text-2xl tracking-widest">
                 <span className="text-white">JOACO</span>
                 <span className="text-[#C6FF00]">.</span>
