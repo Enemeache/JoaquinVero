@@ -49,16 +49,16 @@ export default function Hero() {
         <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           <h1 className="font-bebas leading-none tracking-wide text-white uppercase">
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-              TRANSFORMA
+              MEJORÁ TU CUERPO
             </span>
             <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#C6FF00]">
-              TU CUERPO
+              Y TUS HÁBITOS
             </span>
             <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-              TRANSFORMA
+              PARA LOGRAR
             </span>
             <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#C6FF00]">
-              TU VIDA
+              RESULTADOS REALES
             </span>
           </h1>
         </div>
