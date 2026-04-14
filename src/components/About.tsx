@@ -66,14 +66,14 @@ export default function About() {
             </h2>
 
             {/* Bio */}
-            <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-              Soy Joaquín Verón, entrenador personal certificado con más de 5 años de experiencia
-              transformando cuerpos y mentes. Mi metodología combina ciencia del deporte, nutrición
-              y mentalidad para llevar a mis clientes al siguiente nivel.
+            <p className="text-gray-300 text-base sm:text-lg leading-relaxed font-light">
+              Soy Joaquín Verón, Personal Trainer, y ayudo a personas de distintos niveles a mejorar su cuerpo y su estilo de vida, no solo a seguir una rutina.
             </p>
-            <p className="text-gray-400 text-base leading-relaxed">
-              Creo que cada persona tiene el potencial de superar sus propios límites. Mi misión es
-              darte las herramientas, el plan y el acompañamiento para que lo logres.
+            <p className="text-gray-400 text-base leading-relaxed font-light mt-4">
+              Mi enfoque no es hacer dietas extremas ni entrenamientos imposibles de sostener. Trabajo sobre organización, hábitos, entrenamiento y nutrición, para que los resultados lleguen y se mantengan en el tiempo.
+            </p>
+            <p className="text-gray-400 text-base leading-relaxed font-light mt-4">
+              Cada asesoría es 100% personalizada, adaptada a tu nivel, tus tiempos y tu realidad. No creo en planes genéricos ni en soluciones rápidas: creo en procesos bien hechos, con seguimiento real y acompañamiento constante.
             </p>
 
             {/* Feature grid */}

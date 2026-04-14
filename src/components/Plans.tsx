@@ -1,61 +1,75 @@
 type Plan = {
   name: string;
+  badge: string;
   price: string;
+  priceUSD: string;
   period: string;
   popular: boolean;
   features: string[];
   waLink: string;
   cta: string;
+  description: string;
 };
 
 const plans: Plan[] = [
   {
-    name: "Online",
-    price: "$XX.XXX",
+    name: "BASE",
+    badge: "Entrada",
+    price: "$50.000",
+    priceUSD: "USD 50",
     period: "/mes",
     popular: false,
-    cta: "Elegir Plan Online",
+    cta: "Empezar con Plan Base",
     waLink:
-      "https://wa.me/5491133910239?text=Hola%20Joaco!%20Me%20interesa%20el%20Plan%20Online.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n.",
+      "https://wa.me/5491133910239?text=Hola%20Joaco%2C%20quiero%20empezar%20con%20el%20Plan%20Base%20de%20asesor%C3%ADa%20online.",
+    description: "Para quién quiere empezar, ordenarse y probar el proceso.",
     features: [
-      "Rutina mensual personalizada",
-      "Seguimiento por WhatsApp",
-      "Ajustes quincenales",
-      "Acceso a base de ejercicios",
-      "1 videollamada inicial",
+      "Entrenamiento personalizado (gym o casa)",
+      "Guía nutricional adaptada",
+      "Seguimiento por WhatsApp mensual",
+      "Check mensual",
+      "Acceso a educación básica (hábitos, organización)",
     ],
   },
   {
-    name: "Presencial",
-    price: "$XX.XXX",
+    name: "PERSONALIZADO",
+    badge: "Más elegido",
+    price: "$70.000",
+    priceUSD: "USD 70",
     period: "/mes",
     popular: true,
-    cta: "Elegir Plan Presencial",
+    cta: "Empezar Plan Personalizado",
     waLink:
-      "https://wa.me/5491133910239?text=Hola%20Joaco!%20Me%20interesa%20el%20Plan%20Presencial.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n.",
+      "https://wa.me/5491133910239?text=Hola%20Joaco%2C%20quiero%20info%20sobre%20la%20Asesor%C3%ADa%20Online%20Personalizada.",
+    description: "Para quienes quieren mejores resultados y acompañamiento real.",
     features: [
-      "Todo lo del Plan Online",
-      "Sesiones presenciales grupales",
-      "Corrección de técnica en vivo",
-      "Plan nutricional básico",
-      "Seguimiento semanal de progreso",
-      "Soporte prioritario",
+      "Todo el Plan Base",
+      "Nutrición personalizada",
+      "Check cada 15 días",
+      "Zoom inicial + 1 mensual",
+      "Contacto semanal por WhatsApp",
+      "Ajustes constantes",
+      "Seguimiento cercano",
     ],
   },
   {
-    name: "1 a 1",
-    price: "$XX.XXX",
-    period: "/sesión",
+    name: "PREMIUM",
+    badge: "Top",
+    price: "$100.000",
+    priceUSD: "USD 90",
+    period: "/mes",
     popular: false,
-    cta: "Elegir Plan 1 a 1",
+    cta: "Empezar Plan Premium",
     waLink:
-      "https://wa.me/5491133910239?text=Hola%20Joaco!%20Me%20interesa%20el%20Plan%201%20a%201.%20Quisiera%20m%C3%A1s%20informaci%C3%B3n.",
+      "https://wa.me/5491133910239?text=Hola%20Joaco%2C%20quiero%20arrancar%20con%20la%20Asesor%C3%ADa%20Online%20Premium.",
+    description: "Acompañamiento máximo para resultados de alto nivel.",
     features: [
-      "Sesiones privadas con Joaco",
-      "Corrección de técnica en vivo",
-      "Rutina 100% adaptada",
-      "Seguimiento nutricional completo",
-      "Disponibilidad horaria flexible",
+      "Todo el Plan Personalizado",
+      "Contacto diario por WhatsApp",
+      "Check semanal",
+      "2 Zoom mensuales",
+      "Ajustes finos de nutrición y entrenamiento",
+      "Acompañamiento más cercano",
     ],
   },
 ];
@@ -83,13 +97,13 @@ export default function Plans() {
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <span className="text-[#C6FF00] text-xs font-bold tracking-widest uppercase mb-3 block">
-            Inversión en ti
+            INVERTÍ EN VOS
           </span>
           <h2 className="font-bebas text-5xl sm:text-6xl md:text-7xl text-white uppercase tracking-wide leading-none">
-            ELIGE TU PLAN
+            ELEGÍ TU PLAN
           </h2>
           <p className="text-gray-400 mt-4 text-base sm:text-lg max-w-xl mx-auto">
-            Planes diseñados para cada etapa de tu camino. Sin contratos, sin sorpresas.
+            Todos los planes están pensados para mejorar hábitos, entrenamiento y nutrición, con un enfoque sostenible en el tiempo.
           </p>
         </div>
 
@@ -111,17 +125,21 @@ export default function Plans() {
                 }`}
               />
 
-              {/* Popular badge */}
-              {plan.popular && (
-                <div className="absolute top-4 right-4">
-                  <span className="bg-[#C6FF00] text-black font-black text-xs px-3 py-1 tracking-wider uppercase whitespace-nowrap rounded-full">
-                    Más Popular
-                  </span>
-                </div>
-              )}
+              {/* Badge */}
+              <div className="absolute top-4 right-4">
+                <span
+                  className={`font-black text-xs px-3 py-1 tracking-wider uppercase whitespace-nowrap rounded-full ${
+                    plan.popular
+                      ? "bg-[#C6FF00] text-black"
+                      : "bg-white/10 text-gray-300"
+                  }`}
+                >
+                  {plan.badge}
+                </span>
+              </div>
 
               {/* Plan name & price */}
-              <div className="mb-6">
+              <div className="mb-4">
                 <h3 className="font-bebas text-white text-3xl tracking-wide mb-3">
                   {plan.name}
                 </h3>
@@ -135,7 +153,11 @@ export default function Plans() {
                   </span>
                   <span className="text-gray-400 text-sm mb-1.5 font-medium">{plan.period}</span>
                 </div>
+                <span className="text-gray-500 text-xs font-medium block mt-1">{plan.priceUSD}</span>
               </div>
+
+              {/* Description */}
+              <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
 
               {/* Divider */}
               <div className={`h-px mb-6 ${plan.popular ? "bg-[#C6FF00]/20" : "bg-white/10"}`} />

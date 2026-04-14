@@ -41,7 +41,7 @@ export default function Hero() {
         <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
           <span className="inline-flex items-center gap-2 bg-[#C6FF00] text-black text-xs font-bold px-4 py-1.5 tracking-widest uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
-            Entrenador Personal Certificado
+            Personal Trainer IFBB Internacional
           </span>
         </div>
 
@@ -66,7 +66,7 @@ export default function Hero() {
         {/* Subheading */}
         <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           <p className="text-gray-300 text-lg sm:text-xl max-w-lg leading-relaxed font-light">
-            Mejorá tu cuerpo y tus hábitos para lograr resultados reales y sostenibles.
+            Asesoría online de entrenamiento y nutrición personalizada, con seguimiento real, organización y acompañamiento constante.
           </p>
         </div>
 

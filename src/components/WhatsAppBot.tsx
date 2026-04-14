@@ -6,16 +6,16 @@ const WA_BASE = "https://wa.me/5491133910239";
 
 const quickReplies = [
   {
-    label: "Ver los planes disponibles",
-    url: `${WA_BASE}?text=Hola%20Joaqu%C3%ADn!%20Quisiera%20ver%20los%20planes%20disponibles.`,
+    label: "Plan Base – Asesoría Online",
+    url: `${WA_BASE}?text=Hola%20Joaco%2C%20quiero%20empezar%20con%20el%20Plan%20Base%20de%20asesor%C3%ADa%20online.`,
   },
   {
-    label: "Quiero empezar hoy",
-    url: `${WA_BASE}?text=Hola%20Joaqu%C3%ADn!%20Quiero%20empezar%20hoy.%20%C2%BFC%C3%B3mo%20arrancamos%3F`,
+    label: "Asesoría Online Personalizada",
+    url: `${WA_BASE}?text=Hola%20Joaco%2C%20quiero%20info%20sobre%20la%20Asesor%C3%ADa%20Online%20Personalizada.`,
   },
   {
-    label: "Tengo una consulta",
-    url: `${WA_BASE}?text=Hola%20Joaqu%C3%ADn!%20Tengo%20una%20consulta%20sobre%20el%20entrenamiento.`,
+    label: "Asesoría Online Premium",
+    url: `${WA_BASE}?text=Hola%20Joaco%2C%20quiero%20arrancar%20con%20la%20Asesor%C3%ADa%20Online%20Premium.`,
   },
 ];
 

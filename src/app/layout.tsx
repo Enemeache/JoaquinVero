@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Joaquín Verón | Personal Trainer",
+  title: "Joaquín Verón · Personal Trainer IFBB Internacional",
   description:
     "Entrenamiento personalizado con resultados reales. Transforma tu cuerpo y tu vida con Joaquín Verón, entrenador personal certificado.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "transformación corporal",
   ],
   openGraph: {
-    title: "Joaquín Verón | Personal Trainer",
+    title: "Joaquín Verón · Personal Trainer IFBB Internacional",
     description: "Entrenamiento personalizado con resultados reales",
     type: "website",
     locale: "es_AR",
