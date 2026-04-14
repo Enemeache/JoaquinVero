@@ -66,7 +66,7 @@ export default function Hero() {
         {/* Subheading */}
         <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
           <p className="text-gray-300 text-lg sm:text-xl max-w-lg leading-relaxed font-light">
-            Entrenamiento personalizado que genera resultados reales. Sin excusas, solo progreso.
+            Mejorá tu cuerpo y tus hábitos para lograr resultados reales y sostenibles.
           </p>
         </div>
 
