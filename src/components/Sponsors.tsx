@@ -62,7 +62,7 @@ function DiscountBanner({ storeUrl }: { storeUrl: string }) {
           href={storeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-xs font-bold text-black bg-[#C6FF00] px-4 py-2 rounded-lg hover:bg-[#A8E000] transition-colors whitespace-nowrap"
+          className="text-xs font-bold text-[#C6FF00] border border-[#C6FF00]/60 px-4 py-2 rounded-lg hover:bg-[#C6FF00]/10 transition-colors whitespace-nowrap"
         >
           Ver tienda →
         </a>
@@ -73,7 +73,7 @@ function DiscountBanner({ storeUrl }: { storeUrl: string }) {
 
 export default function Sponsors() {
   return (
-    <section className="bg-[#0a0a0a] py-24 md:py-32">
+    <section id="sponsors" className="bg-[#0a0a0a] py-24 md:py-32 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 md:mb-20">
           <span className="text-[#C6FF00] text-xs font-bold tracking-widest uppercase mb-3 block">

@@ -95,7 +95,7 @@ function CheckIcon() {
 }
 
 export default function Plans() {
-  const [expanded, setExpanded] = useState<string>("PERSONALIZADO");
+  const [expanded, setExpanded] = useState<Set<string>>(new Set(["PERSONALIZADO"]));
 
   return (
     <section id="planes" className="bg-[#0a0a0a] py-24 md:py-32 scroll-mt-20">
@@ -116,7 +116,7 @@ export default function Plans() {
         {/* Plans Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
           {plans.map((plan) => {
-            const isExpanded = expanded === plan.name;
+            const isExpanded = expanded.has(plan.name);
 
             return (
               <div
@@ -137,7 +137,11 @@ export default function Plans() {
                 {/* Card header — always visible, clickable on mobile */}
                 <div
                   className="px-7 pt-6 pb-4 md:px-10 md:pt-8 md:pb-4 cursor-pointer md:cursor-default"
-                  onClick={() => setExpanded(plan.name)}
+                  onClick={() => setExpanded(prev => {
+                    const next = new Set(prev);
+                    next.has(plan.name) ? next.delete(plan.name) : next.add(plan.name);
+                    return next;
+                  })}
                 >
                   <div className="flex items-start justify-between gap-2 mb-3">
                     <h3 className="font-bebas text-white text-3xl tracking-wide">
