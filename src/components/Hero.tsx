@@ -72,7 +72,7 @@ export default function Hero() {
         <img
           src="/joaco-hero.jpg.PNG"
           alt="Joaquín Verón - Personal Trainer"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-top"
         />
       </div>
 
