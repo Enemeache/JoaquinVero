@@ -41,13 +41,13 @@ function DiscountBanner({ storeUrl }: { storeUrl: string }) {
   return (
     <div className="bg-[#0a0a0a] border border-[#C6FF00]/30 rounded-xl p-5">
       <p className="text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-3">Tu código de descuento</p>
-      <div className="flex items-center gap-3 mb-3">
-        <span className="font-bebas text-3xl text-[#C6FF00] tracking-widest bg-[#C6FF00]/10 border border-dashed border-[#C6FF00]/60 px-4 py-1 rounded-lg">
+      <div className="flex flex-col gap-2 mb-3">
+        <span className="font-bebas text-3xl text-[#C6FF00] tracking-widest bg-[#C6FF00]/10 border border-dashed border-[#C6FF00]/60 px-4 py-1 rounded-lg self-start">
           {DISCOUNT_CODE}
         </span>
         <button
           onClick={handleCopy}
-          className={`text-xs font-bold px-3 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${
+          className={`self-start text-xs font-bold px-3 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${
             copied
               ? "bg-[#25D366] text-white scale-95"
               : "bg-[#C6FF00] text-black hover:bg-[#A8E000]"

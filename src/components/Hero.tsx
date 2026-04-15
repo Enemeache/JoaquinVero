@@ -12,7 +12,7 @@ export default function Hero() {
       ──────────────────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0">
         <img
-          src="/joaco-hero-edited.png"
+          src="/joaco-hero-v2.png"
           alt="Joaquín Verón - Personal Trainer"
           className="w-full h-full object-cover object-center"
         />
