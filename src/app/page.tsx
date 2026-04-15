@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ParallaxBanner from "@/components/ParallaxBanner";
 import Plans from "@/components/Plans";
-import Results from "@/components/Results";
 import Sponsors from "@/components/Sponsors";
 import SocialMedia from "@/components/SocialMedia";
 import Contact from "@/components/Contact";
@@ -26,7 +25,6 @@ export default function Home() {
           image="/joaco-parallax-2.jpg.PNG"
           alt="Joaquín Verón en el gym"
         />
-        <Results />
         <Sponsors />
         <SocialMedia />
         <Contact />

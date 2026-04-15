@@ -2,12 +2,6 @@
 
 const WHATSAPP_URL = "https://wa.me/5491133910239?text=Hola%20Joaqu%C3%ADn!%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tus%20servicios.";
 
-const stats = [
-  { value: "150+", label: "Clientes" },
-  { value: "5+", label: "Años de Experiencia" },
-  { value: "500+", label: "Transformaciones" },
-];
-
 export default function Hero() {
   return (
     <section
@@ -91,22 +85,6 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats */}
-        <div
-          className="mt-8 pt-8 border-t border-white/10 grid grid-cols-3 gap-4 sm:gap-8 max-w-xl animate-fade-in-up"
-          style={{ animationDelay: "0.5s" }}
-        >
-          {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col gap-1">
-              <span className="font-bebas text-2xl sm:text-3xl md:text-4xl text-[#C6FF00] tracking-wide">
-                {stat.value}
-              </span>
-              <span className="text-gray-400 text-xs sm:text-sm font-medium leading-tight">
-                {stat.label}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Scroll indicator */}
