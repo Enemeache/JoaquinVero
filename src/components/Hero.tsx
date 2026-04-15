@@ -22,7 +22,7 @@ export default function Hero() {
           src="/joaco-hero.jpg.PNG"
           alt="Joaquín Verón - Personal Trainer"
           className="lg:hidden w-full h-full object-cover"
-          style={{ objectPosition: "50% 18%" }}
+          style={{ objectPosition: "50% 42%" }}
         />
         {/* Leve overlay para legibilidad del texto */}
         <div className="absolute inset-0 bg-black/10" />
