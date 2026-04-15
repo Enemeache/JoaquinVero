@@ -39,15 +39,15 @@ export default function Hero() {
             className="font-bebas text-white uppercase"
             style={{ lineHeight: "0.88", letterSpacing: "0.01em" }}
           >
-            <span style={{ display: "block", fontSize: "clamp(4.2rem, 15vw, 11rem)" }}>
+            <span style={{ display: "block", fontSize: "clamp(3.5rem, 16vw, 11rem)" }}>
               MEJORÁ TU
             </span>
-            <span style={{ display: "block", fontSize: "clamp(4.2rem, 15vw, 11rem)" }}>
+            <span style={{ display: "block", fontSize: "clamp(3.5rem, 16vw, 11rem)" }}>
               CUERPO
             </span>
             <span
               className="text-[#C6FF00]"
-              style={{ display: "block", fontSize: "clamp(2.8rem, 10vw, 7.5rem)" }}
+              style={{ display: "block", fontSize: "clamp(2.2rem, 10vw, 7.5rem)" }}
             >
               Y TUS HÁBITOS
             </span>
