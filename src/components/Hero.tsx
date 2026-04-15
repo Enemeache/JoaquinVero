@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         {/* Desktop: imagen pre-compuesta 1920×1080 (negro izq + persona der) */}
         <img
-          src="/joaco-hero-v4.png"
+          src="/joaco veron hero v12.PNG"
           alt="Joaquín Verón - Personal Trainer"
           className="hidden lg:block w-full h-full object-cover object-top"
         />
