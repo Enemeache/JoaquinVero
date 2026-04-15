@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 type Plan = {
   name: string;
   badge: string;
@@ -91,6 +95,8 @@ function CheckIcon() {
 }
 
 export default function Plans() {
+  const [expanded, setExpanded] = useState<string>("PERSONALIZADO");
+
   return (
     <section id="planes" className="bg-[#0a0a0a] py-24 md:py-32 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,85 +114,107 @@ export default function Plans() {
         </div>
 
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`relative flex flex-col transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden border p-10 ${
-                plan.popular
-                  ? "bg-[#111111] border-[#C6FF00]/40 shadow-xl shadow-[#C6FF00]/10 scale-[1.02] md:scale-[1.04]"
-                  : "border-white/10 bg-[#111111] hover:border-[#C6FF00]/20"
-              }`}
-            >
-              {/* Top colored bar */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
+          {plans.map((plan) => {
+            const isExpanded = expanded === plan.name;
+
+            return (
               <div
-                className={`absolute top-0 left-0 right-0 h-1 ${
-                  plan.popular ? "bg-[#C6FF00]" : "bg-white/10"
-                }`}
-              />
-
-              {/* Badge */}
-              <div className="absolute top-4 right-4">
-                <span
-                  className={`font-black text-xs px-3 py-1 tracking-wider uppercase whitespace-nowrap rounded-full ${
-                    plan.popular
-                      ? "bg-[#C6FF00] text-black"
-                      : "bg-white/10 text-gray-300"
-                  }`}
-                >
-                  {plan.badge}
-                </span>
-              </div>
-
-              {/* Plan name & price */}
-              <div className="mb-4">
-                <h3 className="font-bebas text-white text-3xl tracking-wide mb-3">
-                  {plan.name}
-                </h3>
-                <div className="flex items-end gap-1">
-                  <span
-                    className={`font-bebas text-5xl tracking-wide ${
-                      plan.popular ? "text-[#C6FF00]" : "text-white"
-                    }`}
-                  >
-                    {plan.price}
-                  </span>
-                  <span className="text-gray-400 text-sm mb-1.5 font-medium">{plan.period}</span>
-                </div>
-                <span className="text-gray-500 text-xs font-medium block mt-1">{plan.priceUSD}</span>
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-400 text-sm mb-6">{plan.description}</p>
-
-              {/* Divider */}
-              <div className={`h-px mb-6 ${plan.popular ? "bg-[#C6FF00]/20" : "bg-white/10"}`} />
-
-              {/* Features */}
-              <ul className="flex flex-col gap-3 flex-1 mb-8">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <CheckIcon />
-                    <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* CTA */}
-              <a
-                href={plan.waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`mt-auto flex items-center justify-center font-bold text-sm px-6 py-4 rounded-xl transition-all duration-200 hover:scale-105 ${
+                key={plan.name}
+                className={`relative flex flex-col transition-all duration-300 rounded-2xl overflow-hidden border ${
                   plan.popular
-                    ? "bg-[#C6FF00] hover:bg-[#A8E000] text-black hover:shadow-lg hover:shadow-[#C6FF00]/30"
-                    : "border border-[#C6FF00]/40 text-[#C6FF00] hover:bg-[#C6FF00]/10 hover:border-[#C6FF00]"
+                    ? "bg-[#111111] border-[#C6FF00]/40 shadow-xl shadow-[#C6FF00]/10 md:scale-[1.04]"
+                    : "border-white/10 bg-[#111111] hover:border-[#C6FF00]/20"
                 }`}
               >
-                {plan.cta}
-              </a>
-            </div>
-          ))}
+                {/* Top colored bar */}
+                <div
+                  className={`h-1 flex-shrink-0 ${
+                    plan.popular ? "bg-[#C6FF00]" : "bg-white/10"
+                  }`}
+                />
+
+                {/* Card header — always visible, clickable on mobile */}
+                <div
+                  className="px-7 pt-6 pb-4 md:px-10 md:pt-8 md:pb-4 cursor-pointer md:cursor-default"
+                  onClick={() => setExpanded(plan.name)}
+                >
+                  <div className="flex items-start justify-between gap-2 mb-3">
+                    <h3 className="font-bebas text-white text-3xl tracking-wide">
+                      {plan.name}
+                    </h3>
+                    <span
+                      className={`font-black text-xs px-3 py-1 tracking-wider uppercase whitespace-nowrap rounded-full flex-shrink-0 mt-1 ${
+                        plan.popular
+                          ? "bg-[#C6FF00] text-black"
+                          : "bg-white/10 text-gray-300"
+                      }`}
+                    >
+                      {plan.badge}
+                    </span>
+                  </div>
+
+                  <div className="flex items-end gap-1">
+                    <span
+                      className={`font-bebas text-5xl tracking-wide ${
+                        plan.popular ? "text-[#C6FF00]" : "text-white"
+                      }`}
+                    >
+                      {plan.price}
+                    </span>
+                    <span className="text-gray-400 text-sm mb-1.5 font-medium">{plan.period}</span>
+                  </div>
+                  <span className="text-gray-500 text-xs font-medium block mt-1">{plan.priceUSD}</span>
+
+                  {/* Mobile toggle hint */}
+                  <div className="md:hidden flex items-center justify-end mt-3 pb-1">
+                    <span className={`text-[#C6FF00] text-xs font-bold flex items-center gap-1 transition-all duration-300`}>
+                      {isExpanded ? "Ver menos" : "Ver plan"}
+                      <svg
+                        className={`w-3 h-3 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Collapsible body */}
+                <div className={`${isExpanded ? "flex" : "hidden"} md:flex flex-col flex-1 px-7 pb-7 md:px-10 md:pb-10`}>
+                  {/* Description */}
+                  <p className="text-gray-400 text-sm mb-5">{plan.description}</p>
+
+                  {/* Divider */}
+                  <div className={`h-px mb-5 ${plan.popular ? "bg-[#C6FF00]/20" : "bg-white/10"}`} />
+
+                  {/* Features */}
+                  <ul className="flex flex-col gap-3 flex-1 mb-7">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <CheckIcon />
+                        <span className="text-gray-300 text-sm leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
+                  <a
+                    href={plan.waLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-auto flex items-center justify-center font-bold text-sm px-6 py-4 rounded-xl transition-all duration-200 hover:scale-105 ${
+                      plan.popular
+                        ? "bg-[#C6FF00] hover:bg-[#A8E000] text-black hover:shadow-lg hover:shadow-[#C6FF00]/30"
+                        : "border border-[#C6FF00]/40 text-[#C6FF00] hover:bg-[#C6FF00]/10 hover:border-[#C6FF00]"
+                    }`}
+                  >
+                    {plan.cta}
+                  </a>
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Note */}

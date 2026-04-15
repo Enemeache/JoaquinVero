@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const sponsors = [
   {
     name: "Invictus",
@@ -22,6 +26,50 @@ const sponsors = [
     logoBg: "#b3f000",
   },
 ];
+
+const DISCOUNT_CODE = "JOACOVERON";
+
+function DiscountBanner({ storeUrl }: { storeUrl: string }) {
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(DISCOUNT_CODE).catch(() => {});
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
+  return (
+    <div className="bg-[#0a0a0a] border border-[#C6FF00]/30 rounded-xl p-5">
+      <p className="text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-3">Tu código de descuento</p>
+      <div className="flex items-center gap-3 mb-3">
+        <span className="font-bebas text-3xl text-[#C6FF00] tracking-widest bg-[#C6FF00]/10 border border-dashed border-[#C6FF00]/60 px-4 py-1 rounded-lg">
+          {DISCOUNT_CODE}
+        </span>
+        <button
+          onClick={handleCopy}
+          className={`text-xs font-bold px-3 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${
+            copied
+              ? "bg-[#25D366] text-white scale-95"
+              : "bg-[#C6FF00] text-black hover:bg-[#A8E000]"
+          }`}
+        >
+          {copied ? "✓ Copiado!" : "Copiar código"}
+        </button>
+      </div>
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <p className="text-xs text-gray-600">Descuento especial en toda la tienda</p>
+        <a
+          href={storeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-xs font-bold text-black bg-[#C6FF00] px-4 py-2 rounded-lg hover:bg-[#A8E000] transition-colors whitespace-nowrap"
+        >
+          Ver tienda →
+        </a>
+      </div>
+    </div>
+  );
+}
 
 export default function Sponsors() {
   return (
@@ -69,18 +117,7 @@ export default function Sponsors() {
 
                 <p className="text-gray-500 text-sm font-light leading-relaxed">{sponsor.description}</p>
 
-                {/* Discount banner */}
-                <div className="flex items-center justify-between gap-4 bg-[#0a0a0a] border border-white/10 rounded-xl p-5 flex-wrap">
-                  <div>
-                    <p className="text-[10px] font-bold tracking-widest uppercase text-gray-500 mb-1">Tu código de descuento</p>
-                    <p className="font-bebas text-2xl text-[#C6FF00] tracking-widest">JOACOVERON</p>
-                    <p className="text-xs text-gray-600 mt-0.5">Descuento especial en toda la tienda</p>
-                  </div>
-                  <a href={sponsor.url} target="_blank" rel="noopener noreferrer"
-                    className="text-xs font-bold bg-[#C6FF00] text-black px-4 py-2.5 rounded-lg hover:bg-[#A8E000] transition-colors whitespace-nowrap">
-                    Ver tienda →
-                  </a>
-                </div>
+                <DiscountBanner storeUrl={sponsor.url} />
               </div>
             </div>
           ))}
