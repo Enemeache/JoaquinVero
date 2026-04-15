@@ -6,33 +6,13 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative min-h-screen flex flex-col justify-center overflow-hidden scroll-mt-20"
+      className="relative min-h-screen bg-[#0a0a0a] overflow-hidden scroll-mt-20 flex"
     >
-      {/* Animated gradient background */}
-      <div className="absolute inset-0 bg-[#0a0a0a]">
-        <div
-          className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full animate-hero-bg"
-          style={{
-            background: "radial-gradient(circle, rgba(198,255,0,0.2) 0%, rgba(198,255,0,0.05) 50%, transparent 70%)",
-            filter: "blur(40px)",
-            transform: "translate(-30%, 30%)",
-          }}
-        />
-        <div
-          className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full"
-          style={{
-            background: "radial-gradient(circle, rgba(198,255,0,0.06) 0%, transparent 70%)",
-            filter: "blur(60px)",
-            transform: "translateX(30%)",
-            animation: "heroBg 12s ease-in-out infinite reverse",
-          }}
-        />
-      </div>
+      {/* LEFT — Text content */}
+      <div className="relative z-10 flex flex-col justify-center px-6 sm:px-12 lg:px-20 pt-24 pb-16 w-full lg:w-1/2">
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 flex flex-col gap-8">
         {/* Badge */}
-        <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+        <div className="animate-fade-in-up mb-6" style={{ animationDelay: "0.1s" }}>
           <span className="inline-flex items-center gap-2 bg-[#C6FF00] text-black text-xs font-bold px-4 py-1.5 tracking-widest uppercase">
             <span className="w-1.5 h-1.5 rounded-full bg-black animate-pulse" />
             Personal Trainer IFBB Internacional
@@ -42,55 +22,74 @@ export default function Hero() {
         {/* Main Heading */}
         <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
           <h1 className="font-bebas leading-none tracking-wide text-white uppercase">
-            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-              MEJORÁ TU CUERPO
+            <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl">
+              MEJORÁ TU
             </span>
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#C6FF00]">
+            <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-7xl xl:text-8xl">
+              CUERPO
+            </span>
+            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl text-[#C6FF00]">
               Y TUS HÁBITOS
-            </span>
-            <span className="block text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-              PARA LOGRAR
-            </span>
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#C6FF00]">
-              RESULTADOS REALES
             </span>
           </h1>
         </div>
 
         {/* Subheading */}
-        <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
-          <p className="text-gray-300 text-lg sm:text-xl max-w-lg leading-relaxed font-light">
-            Asesoría online de entrenamiento y nutrición personalizada, con seguimiento real, organización y acompañamiento constante.
+        <div className="animate-fade-in-up mt-6" style={{ animationDelay: "0.3s" }}>
+          <p className="text-gray-400 text-sm sm:text-base max-w-md leading-relaxed font-light tracking-wide uppercase">
+            Asesoría online de entrenamiento y nutrición personalizada, con seguimiento real y acompañamiento constante.
           </p>
         </div>
 
         {/* CTAs */}
         <div
-          className="flex flex-col sm:flex-row gap-4 animate-fade-in-up"
+          className="flex flex-col sm:flex-row gap-4 mt-8 animate-fade-in-up"
           style={{ animationDelay: "0.4s" }}
         >
           <a
             href="#planes"
-            className="inline-flex items-center justify-center bg-[#C6FF00] hover:bg-[#A8E000] text-black font-bold text-base px-8 py-4 transition-all duration-200 hover:scale-105 hover:shadow-lg hover:shadow-[#C6FF00]/30"
+            className="inline-flex items-center justify-center bg-[#C6FF00] hover:bg-[#A8E000] text-black font-bold text-sm px-8 py-4 tracking-widest uppercase transition-all duration-200 hover:scale-105"
           >
-            Ver Planes
+            Conocer Planes
           </a>
           <a
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center border-2 border-[#C6FF00] text-[#C6FF00] hover:bg-[#C6FF00]/10 font-bold text-base px-8 py-4 transition-all duration-200 hover:scale-105"
+            className="inline-flex items-center justify-center border border-white/30 text-white hover:border-[#C6FF00] hover:text-[#C6FF00] font-bold text-sm px-8 py-4 tracking-widest uppercase transition-all duration-200"
           >
-            Contactar por WhatsApp
+            Escribime
           </a>
         </div>
+      </div>
 
+      {/* RIGHT — Photo */}
+      <div className="hidden lg:block absolute right-0 top-0 w-1/2 h-full">
+        {/* Gradient fade on left edge to blend with dark bg */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10" />
+        {/* Gradient fade on bottom */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent z-10" />
+        <img
+          src="/joaco-hero.jpg.PNG"
+          alt="Joaquín Verón - Personal Trainer"
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      {/* Mobile: photo as background with overlay */}
+      <div className="lg:hidden absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-black/70 z-10" />
+        <img
+          src="/joaco-hero.jpg.PNG"
+          alt="Joaquín Verón"
+          className="w-full h-full object-cover object-top"
+        />
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-float">
-        <span className="text-gray-500 text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-[#C6FF00] to-transparent" />
+      <div className="absolute bottom-8 left-8 flex flex-col items-center gap-2 animate-float z-20 hidden lg:flex">
+        <div className="w-px h-12 bg-gradient-to-b from-[#C6FF00] to-transparent" />
+        <span className="text-gray-500 text-xs tracking-widest uppercase rotate-0">Scroll</span>
       </div>
     </section>
   );
