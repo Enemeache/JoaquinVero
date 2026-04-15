@@ -15,7 +15,8 @@ export default function Hero() {
         <img
           src="/joaco-hero-v2.png"
           alt="Joaquín Verón - Personal Trainer"
-          className="hidden lg:block w-full h-full object-cover object-top"
+          className="hidden lg:block w-full h-full object-cover"
+          style={{ objectPosition: "50% 15%" }}
         />
         {/* Mobile: foto retrato original */}
         <img
