@@ -11,10 +11,17 @@ export default function Hero() {
           derecha. object-cover la escala sin recorte problemático.
       ──────────────────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0">
+        {/* Desktop: imagen pre-compuesta 1920×1080 (negro izq + persona der) */}
         <img
           src="/joaco-hero-v2.png"
           alt="Joaquín Verón - Personal Trainer"
-          className="w-full h-full object-cover object-center"
+          className="hidden lg:block w-full h-full object-cover object-center"
+        />
+        {/* Mobile: foto retrato original, centrada en la parte superior */}
+        <img
+          src="/joaco-hero.jpg.PNG"
+          alt="Joaquín Verón - Personal Trainer"
+          className="lg:hidden w-full h-full object-cover object-top"
         />
         {/* Leve overlay para legibilidad del texto */}
         <div className="absolute inset-0 bg-black/10" />
