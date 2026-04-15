@@ -15,14 +15,14 @@ export default function Hero() {
         <img
           src="/joaco-hero-v2.png"
           alt="Joaquín Verón - Personal Trainer"
-          className="hidden lg:block w-full h-full object-cover object-center"
+          className="hidden lg:block w-full h-full object-cover object-top"
         />
         {/* Mobile: foto retrato original */}
         <img
           src="/joaco-hero.jpg.PNG"
           alt="Joaquín Verón - Personal Trainer"
           className="lg:hidden w-full h-full object-cover"
-          style={{ objectPosition: "50% 42%" }}
+          style={{ objectPosition: "50% 18%" }}
         />
         {/* Leve overlay para legibilidad del texto */}
         <div className="absolute inset-0 bg-black/10" />
