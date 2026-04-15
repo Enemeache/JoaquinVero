@@ -11,25 +11,19 @@ export default function Hero() {
           derecha. object-cover la escala sin recorte problemático.
       ──────────────────────────────────────────────────────────────────────── */}
       <div className="absolute inset-0">
-        {/* Desktop: imagen pre-compuesta 1920×1080 (negro izq + persona der) */}
-        <img
-          src="/joaco-hero-v2.png"
-          alt="Joaquín Verón - Personal Trainer"
-          className="hidden lg:block w-full h-full object-cover object-center"
-        />
-        {/* Mobile: foto retrato original, centrada en la parte superior */}
+        {/* Foto original en ambos breakpoints, posicionada según dispositivo */}
         <img
           src="/joaco-hero.jpg.PNG"
           alt="Joaquín Verón - Personal Trainer"
-          className="lg:hidden w-full h-full object-cover"
-          style={{ objectPosition: "50% 18%" }}
+          className="w-full h-full object-cover"
+          style={{ objectPosition: "right top" }}
         />
-        {/* Leve overlay para legibilidad del texto */}
-        <div className="absolute inset-0 bg-black/10" />
+        {/* Desktop: degradé negro izquierda → transparente derecha */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-black from-[30%] via-black/60 via-[52%] to-transparent" />
       </div>
 
       {/* ── Mobile: overlay más denso ─────────────────────────────────── */}
-      <div className="lg:hidden absolute inset-0 bg-black/50 z-[1]" />
+      <div className="lg:hidden absolute inset-0 bg-black/55 z-[1]" />
 
       {/* ── Contenido ─────────────────────────────────────────────────── */}
       <div className="relative z-10 flex flex-col justify-end lg:justify-center min-h-screen px-6 sm:px-10 lg:px-14 xl:px-20 pt-28 pb-14 lg:pb-16">
