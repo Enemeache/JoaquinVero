@@ -6,45 +6,31 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen bg-black overflow-hidden scroll-mt-20"
     >
-      {/* ── Desktop photo ───────────────────────────────────────────────────
-          container arranca en el 28% del viewport (no en el borde derecho)
-          → la imagen queda más centrada en pantalla, igual que Franco Curia.
-          object-cover + object-top: llena el ancho y ancla la cabeza arriba.
+      {/* ── Imagen pre-compuesta 1920×1080 ────────────────────────────────
+          Ya viene con zona negra izquierda + persona (cintura→cabeza) a la
+          derecha. object-cover la escala sin recorte problemático.
       ──────────────────────────────────────────────────────────────────────── */}
-      <div
-        className="hidden lg:block absolute top-0 bottom-0 right-0 overflow-hidden"
-        style={{ width: "72%" }}
-      >
-        {/* Gradient negro → transparente: funde el área de texto con la foto */}
+      <div className="absolute inset-0">
+        <img
+          src="/joaco-hero-edited.png"
+          alt="Joaquín Verón - Personal Trainer"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Gradient suave sobre el negro para mejorar legibilidad del texto */}
         <div
-          className="absolute inset-y-0 left-0 z-10"
+          className="absolute inset-0"
           style={{
-            width: "42%",
             background:
-              "linear-gradient(to right, #000 0%, #000 20%, rgba(0,0,0,0.55) 65%, transparent 100%)",
+              "linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 45%, transparent 70%)",
           }}
         />
-        <img
-          src="/joaco-hero.jpg.PNG"
-          alt="Joaquín Verón - Personal Trainer"
-          className="w-full h-full object-cover object-top"
-        />
       </div>
 
-      {/* ── Mobile: fondo completo con overlay ──────────────────────────── */}
-      <div className="lg:hidden absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/65 z-10" />
-        <img
-          src="/joaco-hero.jpg.PNG"
-          alt="Joaquín Verón"
-          className="w-full h-full object-cover object-top"
-        />
-      </div>
+      {/* ── Mobile: overlay más denso ─────────────────────────────────── */}
+      <div className="lg:hidden absolute inset-0 bg-black/50 z-[1]" />
 
-      {/* ── Texto ──────────────────────────────────────────────────────────
-          justify-end en mobile (texto abajo), justify-center en desktop
-      ──────────────────────────────────────────────────────────────────────── */}
-      <div className="relative z-20 flex flex-col justify-end lg:justify-center min-h-screen px-6 sm:px-10 lg:px-14 xl:px-20 pt-28 pb-14 lg:pb-16">
+      {/* ── Contenido ─────────────────────────────────────────────────── */}
+      <div className="relative z-10 flex flex-col justify-end lg:justify-center min-h-screen px-6 sm:px-10 lg:px-14 xl:px-20 pt-28 pb-14 lg:pb-16">
 
         <h1
           className="font-bebas text-white uppercase"
