@@ -16,14 +16,8 @@ export default function Hero() {
           alt="Joaquín Verón - Personal Trainer"
           className="w-full h-full object-cover object-center"
         />
-        {/* Gradient suave sobre el negro para mejorar legibilidad del texto */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 45%, transparent 70%)",
-          }}
-        />
+        {/* Leve overlay para legibilidad del texto */}
+        <div className="absolute inset-0 bg-black/10" />
       </div>
 
       {/* ── Mobile: overlay más denso ─────────────────────────────────── */}
